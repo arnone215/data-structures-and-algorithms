@@ -63,10 +63,14 @@ Your function should use slice within a loop and return an array of each success
 For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
-
+//slide, splice, join, split
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  //for(let i = 0; i <= str.length; i++) <--------- Easier way of doing following line
+  for(let i = 0; i < str.length + 1; i++){
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -78,9 +82,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,6 +129,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(ingredient =>{
+    let withoutAmounts = ingredient.slice(ingredient.indexOf(' ') + 1);
+    let withoutUnits = withoutAmounts.slice(withoutAmounts.indexOf(' ') + 1);
+    result.push(withoutUnits);
+  });
   return result;
 };
 
