@@ -50,9 +50,7 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
-  // Solution code here...
-};
+const oddValues = (arr) => arr.filter(item => item % 2 !== 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -64,6 +62,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let newArray = arr.filter(i => {
+    return !forbiddenValues.includes(i);
+  });
+  return (newArray);
 };
 
 /* ------------------------------------------------------------------------------------------------

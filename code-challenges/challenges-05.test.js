@@ -11,10 +11,7 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // Solution code here...
-
-};
+const toLastNames = people => people.map(person => `${person.firstName} ${person.lastName}`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -40,10 +37,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
-  arr.reduce((answerSoFar, currentValue) => answerSoFar + currentValue.length, 1+ 0);
-};
+const addPurchases = (arr) => arr.reduce((answerSoFar, currentValue) => answerSoFar + currentValue.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -53,12 +47,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-  return arr.reduce ((answerSoFar, current) => {
-    return answerSoFar + 1;
-  }, 0);
-};
+const countNumberOfElements = (arr) => arr.reduce((element) => element + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -135,6 +124,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return str.split('').reduce((rev, char)=>char + rev, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
