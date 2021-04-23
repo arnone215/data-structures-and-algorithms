@@ -30,7 +30,16 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  let maxNum = 0;
+  for (let i in matrix){
+    for (let j in matrix[i]){
+      const value = matrix[i][j];
+      if(value > maxNum){
+        maxNum = value;
+      }
+    }
+  }
+  return maxNum;
 };
 
 /* ------------------------------------------------------------------------------------------------
