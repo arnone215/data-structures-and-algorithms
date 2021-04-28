@@ -31,10 +31,10 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   let maxNum = 0;
-  for (let i in matrix){
-    for (let j in matrix[i]){
+  for (let i in matrix) {
+    for (let j in matrix[i]) {
       const value = matrix[i][j];
-      if(value > maxNum){
+      if (value > maxNum) {
         maxNum = value;
       }
     }
@@ -58,6 +58,13 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  let value = 0;
+  for (let i in matrix) {
+    for (let j in matrix[i]) {
+      value += matrix[i][j];
+    }
+  }
+  return value;
 };
 
 
@@ -88,7 +95,7 @@ const grandTotal = (stores) => {
   let totalCookieSales = [];
   for (let i in hoursOpen) {
     let hourlyTotals = 0;
-    for (let j in cookieStores){
+    for (let j in cookieStores) {
       hourlyTotals += cookieStores[j][i];
     }
     totalCookieSales.push(hourlyTotals);
@@ -108,6 +115,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
+  let dataArr = [];
+  hours.forEach((hours, index) => dataArr.push({ sales: `${data[index]} cookies`, time: hours }));
+  return dataArr;
   // Solution code here...
 };
 
@@ -134,6 +144,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
